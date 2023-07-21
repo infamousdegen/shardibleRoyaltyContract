@@ -12,7 +12,7 @@ const values = [];
 
 async function getOwnerOfToken(contract, tokenId) {
   const owner = await contract.ownerOf(tokenId);
-  return owner.toLowerCase();
+  return owner;
 }
 
 async function fetchNFTOwners() {
