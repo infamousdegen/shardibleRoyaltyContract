@@ -11,13 +11,13 @@ contract Counter is Ownable2Step,ReentrancyGuard {
 
     using Address for address;
 
-    uint256 totalMawcHolder;
+    uint256 public totalMawcHolder;
 
-    uint256 perTokenClaimable;
+    uint256 public perTokenClaimable;
 
-    uint256 currentAccountedBalance;
+    uint256 public currentAccountedBalance;
 
-    uint256 ownerRoyalty;
+    uint256 public ownerRoyalty;
 
     bytes32 public currentRootHash;
 
