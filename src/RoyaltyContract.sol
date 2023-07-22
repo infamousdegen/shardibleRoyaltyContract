@@ -119,6 +119,7 @@ contract Counter is Ownable2Step,ReentrancyGuard {
             ++i;
         }
 
+        require(_amountToTransfer > 0, "Amount to be sent is 0");
 
         //@using openzepplin send transfer to transfer the amount securely 
         Address.sendValue(payable(msg.sender),_amountToTransfer);
