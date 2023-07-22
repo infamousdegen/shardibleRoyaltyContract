@@ -143,7 +143,8 @@ contract Counter is Ownable2Step,ReentrancyGuard {
 
     }
     
-
+    receive() external payable {
+    }
     // //@note: Should only be used in the inevitable cases 
     // function emergencyWithdraw(address payable _recepient) external onlyOwner{
     //     Address.sendValue(_recepient,address(this).balance);
