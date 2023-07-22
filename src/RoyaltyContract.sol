@@ -120,7 +120,7 @@ contract Counter is Ownable2Step,ReentrancyGuard {
         }
 
         require(_amountToTransfer > 0, "Amount to be sent is 0");
-
+        currentAccountedBalance = currentAccountedBalance -_amountToTransfer;
         //@using openzepplin send transfer to transfer the amount securely 
         Address.sendValue(payable(msg.sender),_amountToTransfer);
 
@@ -136,7 +136,7 @@ contract Counter is Ownable2Step,ReentrancyGuard {
         uint256 _amountToSend = ownerRoyalty;
 
         ownerRoyalty = 0;
-
+        currentAccountedBalance =  currentAccountedBalance - _amountToSend;
         Address.sendValue(_recepient,_amountToSend);
         
         emit withdraw(_recepient,_amountToSend);
